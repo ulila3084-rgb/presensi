@@ -1,0 +1,27 @@
+name: Presensi Pasti Sukses
+
+# Alur kerja akan berjalan setiap kali Anda push kode ATAU bisa diklik manual
+on:
+  push:
+    branches: [ "utama" ]
+  workflow_dispatch:
+
+jobs:
+  proses-presensi:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Ambil Kode Repositori
+      uses: actions/checkout@v4
+
+    - name: 2. Cek Sistem Pengering
+      run: |
+        echo "Memulai proses pengecekan sistem..."
+        echo "Sistem operasi yang digunakan:"
+        uname -a
+
+    - name: 3. Cetak Status Sukses
+      run: |
+        echo "========================================="
+        echo " STATUS: 100% BERHASIL DIJALANKAN!       "
+        echo "========================================="
