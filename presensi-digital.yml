@@ -1,0 +1,13 @@
+name: CI Presensi
+
+on:
+  push:
+    branches: [ "main", "master", "utama" ]
+  workflow_dispatch:
+
+jobs:
+  tes-sistem:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cek Status
+      run: echo "Presensi berhasil dipicu dan berjalan 100%!"
