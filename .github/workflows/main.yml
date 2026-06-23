@@ -1,0 +1,20 @@
+name: CI Presensi
+
+# Menentukan kapan alur kerja ini berjalan
+on:
+  push:
+    branches: [ "utama" ]
+  pull_request:
+    branches: [ "utama" ]
+
+# Tugas yang akan dijalankan
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Ambil kode dari repositori
+      uses: actions/checkout@v4
+
+    - name: Jalankan skrip uji coba
+      run: echo "Alur kerja berhasil dijalankan!"
